@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/providers";
 import "@workspace/ui/esimcard.css";
 import { ReactQueryProvider } from "@workspace/core/providers/ReactQueryProvider";
+import Navbar from "@/components/layout/Navbar";
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -21,10 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <ReactQueryProvider>
-          <Providers>{children}</Providers>
+          <Providers>
+            <Navbar />
+            {children}
+          </Providers>
         </ReactQueryProvider>
       </body>
     </html>

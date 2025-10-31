@@ -1,11 +1,10 @@
-import Navbar from "@/components/layout/Navbar";
-import { Button } from "@workspace/ui/components/button";
+import HomeHero from "@/components/HomeHero";
+// import { readCookies } from "@workspace/core/services/actions";
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
-      <Navbar />
-      <Button>Hello</Button>
+      <HomeHero />
     </>
   );
 }

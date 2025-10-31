@@ -1,13 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@workspace/ui/components/drawer";
+import useMediaQuery from "@workspace/core/hooks/useMediaQuery";
+import usePackagesList from "@workspace/core/hooks/usePackagesList";
+import useTopDestinations from "@workspace/core/hooks/useTopDestinations";
 import {
   Dialog,
   DialogContent,
@@ -15,14 +10,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@workspace/ui/components/dialog";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@workspace/ui/components/drawer";
 import { Input } from "@workspace/ui/components/input";
-import useMediaQuery from "@workspace/core/hooks/useMediaQuery";
-import usePackagesList from "@workspace/core/hooks/usePackagesList";
-import useTopDestinations from "@workspace/core/hooks/useTopDestinations";
 import { Search } from "lucide-react";
+import CountryRegionSearch from "./CountryRegionSearch";
 
 function SearchPackagesList() {
-  const [isClient, setIsClient] = useState(false);
+  // const [isClient, setIsClient] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const { isListLoading, packagesList } = usePackagesList();

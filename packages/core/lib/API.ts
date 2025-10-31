@@ -1,6 +1,7 @@
 import { globalResponseHandler } from "../helpers/globalResponseHandler";
 
-export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+export const baseUrl = process.env.NEXT_PUBLIC_BASE_API as string;
+// export const baseUrl = "https://portal.esimcard.com/api/landing";
 
 function mergeHeaders(defaults: HeadersInit, extra?: HeadersInit): HeadersInit {
   return { ...defaults, ...extra };

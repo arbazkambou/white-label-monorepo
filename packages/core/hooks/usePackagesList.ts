@@ -6,8 +6,8 @@
 //   });
 
 import { useQuery } from "@tanstack/react-query";
-import { searchPackagesList } from "../services/packages.services.js";
 import { useEffect, useState } from "react";
+import { searchPackagesList } from "../services/packages.services";
 
 function usePackagesList() {
   const [isClient, setIsClient] = useState(false);

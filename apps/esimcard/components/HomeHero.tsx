@@ -1,19 +1,18 @@
-import japan from "@/_assets/flags/japan.svg";
-import russia from "@/_assets/flags/russia.svg";
-import spain from "@/_assets/flags/spain.svg";
-import turkey from "@/_assets/flags/turkey.svg";
-import uae from "@/_assets/flags/uae.svg";
-import uk from "@/_assets/flags/uk.svg";
-import usa from "@/_assets/flags/usa.svg";
-import hero from "@/_assets/images/hero.png";
-import fiveStars from "@/_assets/svgs/5Star.svg";
-import SearchPackagesList from "@/components/features/packages/SearchPackagesList";
-import { Button } from "@/components/ui/button";
+import japan from "@/assets/flags/japan.svg";
+import russia from "@/assets/flags/russia.svg";
+import spain from "@/assets/flags/spain.svg";
+import turkey from "@/assets/flags/turkey.svg";
+import uae from "@/assets/flags/uae.svg";
+import uk from "@/assets/flags/uk.svg";
+import usa from "@/assets/flags/usa.svg";
+import fiveStars from "@/assets/images/5Star.svg";
+import hero from "@/assets/images/hero.png";
+import { Button } from "@workspace/ui/components/button";
 import { ArrowUpLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import TrustpilotWidget from "../shared/TrustpilotWidget";
 import FlagHoverComponent from "./FlagHoverComponent";
+import SearchPackagesList from "./SearchPackagesList";
 import SocialsButtons from "./SocialsButtons";
 
 function HomeHero() {
@@ -53,9 +52,9 @@ function HomeHero() {
 
           {/* Search Country Region */}
           <div className="relative top-2">
-            <div className="mb-3 flex items-center justify-center md:-ms-3 md:justify-start">
-              <TrustpilotWidget />
-            </div>
+            {/* <div className="mb-3 flex items-center justify-center md:-ms-3 md:justify-start">
+              <TrustpilotWidge/>
+            </div> */}
 
             <div className="flex flex-col gap-4 xl:flex-row xl:items-center">
               <SearchPackagesList />

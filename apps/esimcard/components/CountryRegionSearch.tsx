@@ -1,11 +1,19 @@
 "use client";
 
+import { cleanString } from "@workspace/core/helpers/cleanString";
+import { isSearchQueryMatch } from "@workspace/core/helpers/isSearchQueryMatch";
 import {
   SearchPackagesListReturn,
   TopDestination,
 } from "@workspace/core/types/packages.types";
+import { Input } from "@workspace/ui/components/input";
+import { Search } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Spinner } from "./Spinner";
+import CountryItem from "./CountryItem";
+import globalImg from "@/assets/flags/globalMap.svg";
+import { cn } from "@workspace/ui/lib/utils";
 
 interface PropsType {
   searchInputStyle?: string;
@@ -55,16 +63,16 @@ function CountryRegionSearch({
   }
 
   // --- when loading, do not run GTM or any filtering
-  useEffect(() => {
-    if (isDataLoading) return;
-    if (!cleanString(searchQuery)) return;
+  // useEffect(() => {
+  //   if (isDataLoading) return;
+  //   if (!cleanString(searchQuery)) return;
 
-    const timeout = setTimeout(() => {
-      sendGTMEvent({ event: "search", search_term: searchQuery });
-    }, 1000);
+  //   const timeout = setTimeout(() => {
+  //     sendGTMEvent({ event: "search", search_term: searchQuery });
+  //   }, 1000);
 
-    return () => clearTimeout(timeout);
-  }, [searchQuery, isDataLoading]);
+  //   return () => clearTimeout(timeout);
+  // }, [searchQuery, isDataLoading]);
 
   // --- build filtered results only when NOT loading and there is a query
   const filteredPackagesList = useMemo(() => {

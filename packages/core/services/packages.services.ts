@@ -11,6 +11,7 @@ import {
 } from "../types/packages.types";
 
 export async function searchPackagesList(): Promise<SearchPackagesListReturn> {
+  console.log("hello", `${baseUrl}/search-package-list`);
   const response = await fetch(`${baseUrl}/search-package-list`, {
     headers: {
       "Content-Type": "application/json",

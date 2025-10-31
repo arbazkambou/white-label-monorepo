@@ -24,6 +24,7 @@
   "exports": {
     "./hooks/*": "./hooks/*.ts",
     "./providers/*": "./providers/*.tsx",
-    "./helpers/*": "./helpers/*.ts"
+    "./helpers/*": "./helpers/*.ts",
+    "./services/*": "./services/*.ts"
   }
 }
